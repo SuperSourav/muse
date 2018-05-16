@@ -17,25 +17,25 @@ class state:
       bonus = 0
       for i in range(3):
          if self.board[i,Y] == 1:
-            bonus += 2
+            bonus += 3
             break
          paths[0].append("(%i,%i)->"%(i,Y))
       for j in range(3):
          if self.board[X,j] == 1:
-            bonus += 2
+            bonus += 3
             break
          paths[1].append("(%i,%i)->"%(X,j))
       if (abs(X-Y) != 1):
          if ( (X+1<3 and Y+1<3) or (X-1>-1 and Y-1>-1)):
             for k in range(3):
                if self.board[k,k] == 1: 
-                  bonus += 2
+                  bonus += 3
                   break
                paths[2].append("(%i,%i)->"%(k,k))
          if ( (X+1<3 and Y-1>-1) or (X-1>-1 and Y+1<3)):
             for l in range(3):
                if self.board[l,2-l] == 1: 
-                  bonus += 2
+                  bonus += 3
                   break
                paths[3].append("(%i,%i)->"%(l,2-l))
       final_paths = []
